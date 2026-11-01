@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #333;
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  margin: 0 0 2rem;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+.field input,
+.field select {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font: inherit;
+  border: 0;
+  border-bottom: 1px solid #757575;
+  background: transparent;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid #0b57d0;
+  border-bottom-color: #0b57d0;
+}
+
+.error {
+  display: none;
+  margin: 0.3rem 0 0;
+  color: #b42318;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.field:has(:user-invalid) .error,
+.upload:has(:user-invalid) .error {
+  display: block;
+}
+
+.field input:user-invalid,
+.field select:user-invalid {
+  border-bottom: 2px solid #b42318;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+.upload {
+  margin: 2rem 0;
+}
+
+.upload input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.dropzone {
+  display: block;
+  padding: 2rem;
+  text-align: center;
+  color: #555;
+  border: 1px dashed #757575;
+  cursor: pointer;
+}
+
+.when-done {
+  display: none;
+}
+
+.upload input:user-valid + .dropzone .when-empty {
+  display: none;
+}
+
+.upload input:user-valid + .dropzone .when-done {
+  display: inline;
+}
+
+.small {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font: inherit;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  background: #00801a;
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 26rem) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

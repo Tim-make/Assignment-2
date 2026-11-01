@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apply now</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="page">
+      <h1 id="form-title">Apply now</h1>
+
+      <form method="get" aria-labelledby="form-title">
+
+        <div class="field">
+          <label for="name">Name *</label>
+          <input id="name" name="name" type="text" required minlength="2" maxlength="80"
+                 aria-required="true" aria-describedby="name-error">
+          <p id="name-error" class="error" role="alert">Please enter your name (at least 2 characters).</p>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required
+                 aria-required="true" aria-describedby="email-error">
+          <p id="email-error" class="error" role="alert">Enter a valid email address, like name@example.com.</p>
+        </div>
+
+        <div class="field">
+          <label for="phone">Contact Phone *</label>
+          <input id="phone" name="phone" type="tel" required pattern="\+?[0-9 ()\-]{7,20}"
+                 aria-required="true" aria-describedby="phone-error">
+          <p id="phone-error" class="error" role="alert">Enter a phone number with 7–20 digits.</p>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="address">Address *</label>
+            <input id="address" name="address" type="text" required maxlength="120"
+                   aria-required="true" aria-describedby="address-error">
+            <p id="address-error" class="error" role="alert">Please enter your address.</p>
+          </div>
+          <div class="field">
+            <label for="postcode">Postcode *</label>
+            <input id="postcode" name="postcode" type="text" required pattern="[A-Za-z0-9 \-]{3,10}"
+                   aria-required="true" aria-describedby="postcode-error">
+            <p id="postcode-error" class="error" role="alert">Enter a valid postcode.</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="linkedin">Linkedin</label>
+          <input id="linkedin" name="linkedin" type="url"
+                 aria-describedby="linkedin-error">
+          <p id="linkedin-error" class="error" role="alert">Enter the full link, starting with https://www.linkedin.com/</p>
+        </div>
+
+        <div class="field">
+          <label for="position">Position *</label>
+          <select id="position" name="position" required
+                  aria-required="true" aria-describedby="position-error">
+            <option value="">Choose…</option>
+            <option>Front-end developer</option>
+            <option>UX designer</option>
+            <option>Community manager</option>
+            <option>Support specialist</option>
+            <option>Other</option>
+          </select>
+          <p id="position-error" class="error" role="alert">Please choose a position.</p>
+        </div>
+
+        <div class="upload">
+          <input id="files" name="files" type="file" multiple required accept=".pdf,.doc,.docx"
+                 aria-required="true" aria-describedby="files-hint files-error">
+          <label for="files" class="dropzone">
+            <span class="when-empty">Upload your CV and job application *</span>
+            <span class="when-done">File attached. Click to change</span>
+          </label>
+          <p id="files-hint" class="small">File size should not exceed 10MB</p>
+          <p id="files-error" class="error" role="alert">Please attach your CV and job application.</p>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+  </body>
+</html>
+
